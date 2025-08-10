@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Gaming Cafe Console Manager</title>
+    <link rel="stylesheet" href="gfa.css">
+</head>
+<body>
+    <h1>Game Fusion Arena</h1>
+
+    <!-- Start Modal -->
+    <div id="startModal" class="modal">
+      <div class="modal-content">
+        <h3>Start Session</h3>
+        <input id="modalNameInput" placeholder="Enter name" />
+        <button onclick="confirmStart()">Start</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+
+    <!-- End Modal -->
+    <div id="endModal" class="modal">
+      <div class="modal-content">
+        <h3>End Session</h3>
+        <p id="endModalInfo"></p>
+        <button onclick="confirmEnd()">End</button>
+        <button onclick="closeEndModal()">Cancel</button>
+      </div>
+    </div>
+
+
+
+    <!-- ✅ Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="btn start-btn" onclick="filterConsoles('all')">Show All</button>
+      <button class="btn" onclick="filterConsoles('vacant')">Show Vacant</button>
+      <button class="btn end-btn" onclick="filterConsoles('occupied')">Show Occupied</button>
+    </div>
+
+
+    <!-- ✅ Console List -->
+    <div id="consoleList" class="console-list"></div>
+
+
+
+    <!-- ✅ Session History Table -->
+    <h2>Session History</h2>
+
+
+        <button class="btn start-btn" onclick="exportToExcel()">Export to Excel</button>
+
+
+
+        
+    <div id="history"></div>
+
+
+    <script src="gfa.js"></script>
+
+
+
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+
+
+</body>
+</html>
